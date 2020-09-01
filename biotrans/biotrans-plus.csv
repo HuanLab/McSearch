@@ -1,0 +1,60 @@
+Requirement,Change,Heavy atom No.,Reaction,Mass Difference,Description,bond tolerance
+HO,C5H3N5O-1,10,(+C5H5N5 - H2O),117.04393,addition of Adenine,8
+H,C10H11N5O3,18,(+C10H11N5O3),249.08619,addition of Adenosine,8
+H,C10H11N5O4,19,(+C10H11N5O4),265.081105,addition of Guanosine,10
+H,C10H12N2O4,16,(+C10H12N2O4),224.079708,addition of Thymidine,8
+H,C10H15N3O5S,19,(+C10H15N3O5S),289.073244,addition of Glutathione,0
+H,C10H15N3O6S,20,(+C10H15N3O6S),305.068159,addition of S-Glutathione,0
+H,C10H7NO,12,(+C10H7NO),157.052764,indole acetylation,8
+H,C12H20O10,22,(+C12H20O10),324.10565,addition of di-hexose,0
+H,C16H30O,17,(+C16H30O),238.229665,addition of Palmitic acid,0
+H,C18H30O15,33,(+C18H30O15),486.158475,addition of tri-hexose,0
+H,C2H2O,3,(+C2H2O),42.010565,acetylation,0
+H,C2H3NO,4,(+C2H3NO),57.021464,glycine conjugation,0
+H,C2H4,2,(+C2H4),28.0313,addition of C2H4,0
+H,C2H5NO2S,6,(+C2H5NO2S),107.004101,taurine conjugation,0
+H,C3H2O3,6,(+C3H2O3),86.000394,malonylation,0
+H,C3H4O,4,(+C3H4O),56.026215,propionylation,0
+H,C3H5NO2S,7,(+C3H5NO2S),119.004101,S-cysteine conjugation,0
+H,C3H5NOS,6,(+C3H5NOS),103.009186,cysteine conjugation,0
+H,C4H2N2O,7,(+C4H2N2O),94.016713,addition of Uracil,8
+H,C4H3N3,7,(+C4H3N3),93.032697,addition of Cytosine,8
+H,C4H4O,5,(+C4H4O),68.026215,crotonylation,0
+H,C4H4O3,7,(+C4H4O3),100.016044,succinylation,0
+H,C4H6O,5,(+C4H6O),70.041865,butyrylation,0
+H,C5H3N5,10,(+C5H3N5),133.038845,addition of Guanine,10
+H,C5H4N2O,8,(+C5H4N2O),108.032363,addition of Thymine,8
+H,C5H6O3,8,(+C5H6O3),114.031694,glutaryllation,0
+H,C5H7NO3S,10,(+C5H7NO3S),161.014666,addition of N-acetyl-S-cysteine,0
+H,C5H8O4,9,(+C5H8O4),132.04226,addition of D-ribose,0
+H,C6H10O5,11,(+C6H10O5),162.052825,addition of Hexose,0
+H,C6H11O8P,15,(+C6H11O8P),242.019158,addition of Glucose-6-phosphate,0
+H,C6H8O6,12,(+C6H8O6),176.03209,addition of glucuronic acid,0
+H,C7H13NO2,10,(+C7H13NO2),143.094629,addition of Carnitine,0
+H,C9H10N2O5,16,(+C9H10N2O5),226.058973,addition of Uridine,8
+H,C9H11N3O4,16,(+C9H11N3O4),225.074957,addition of Cytidine,8
+H,CH2,1,(+CH2),14.01565,methylation,0
+H,CO,2,(+CO),27.994915,addition of CO,0
+H,CO2,3,(+CO2),43.98983,addition of CO2,0
+H,H2,0,(+H2),2.01565,hydrogenation,0
+H,H2O,1,(+H2O),18.010565,addition of water,0
+H,HPO3,4,(+HPO3),79.966333,addition of Phosphate,0
+H,NH,1,(+NH),15.010899,addition of NH,0
+H,NH3,1,(+NH3),17.026549,addition of ammonia,0
+H,O,1,(+O),15.994915,oxidation,0
+H,SO3,4,(+SO3),79.956817,sulfate conjugation,0
+HS,O3,4,(SH -> SO3H),47.984745,Thiol to Sulfonic acid,0
+H,H2P2O6,8,(+H2P2O6),159.932661,addition of di-phosphate,0
+H,H3P3O9,12,(+H3P3O9),239.898992,addition of tri-phosphate,0
+H,FH-1,1,(+F-H),17.990578,fluorination,0
+H,ClH-1,1,(+Cl-H),33.961028,chlorination,0
+H,BrH-1,1,(+Br-H),77.910512,bromination,0
+H,IH-1,1,(+I-H),125.896648,iodination,0
+NH2,H-2O2,3,(NH2 -> NO2),29.974179,nitrification,0
+H,CF3H-1,4,(+CF3-H),67.987385,addition of trifluoromethyl,0
+H,C5NH11,6,(+C5NH11),85.089149,addition of choline,0
+H,C5H6O,6,(+C5H6O),82.041865,addition of tiglyl,0
+H,NO2H-1,3,(+NO2-H),44.985078,addition of nitro,0
+H,C7H6,7,(+C7H7-H),91.054775,addition of benzyl,6
+H,C6H4,6,(+C6H5-H),76.0313,addition of phenyl,0
+H,C2H2O2,4,(+C2H2O2),58.005479,addition of acetic acid,0

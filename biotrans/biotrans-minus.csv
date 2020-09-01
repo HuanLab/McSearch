@@ -1,0 +1,60 @@
+Requirement,Change,Heavy atom No.,Reaction,Mass Difference,Description
+C5H5N5,C-5H-3N-5O,10,(-C5H5N5 + H2O),   -117.043930,loss of Adenine
+C10H11N5O3,C-10H-11N-5O-3,18,(-C10H11N5O3),   -249.086190,loss of Adenosine
+C10H11N5O4,C-10H-11N-5O-4,19,(-C10H11N5O4),   -265.081105,loss of Guanosine
+C10H12N2O4,C-10H-12N-2O-4,16,(-C10H12N2O4),   -224.079708,loss of Thymidine
+C10H15N3O5S,C-10H-15N-3O-5S-1,19,(-C10H15N3O5S),   -289.073244,loss of Glutathione
+C10H15N3O6S,C-10H-15N-3O-6S-1,20,(-C10H15N3O6S),   -305.068159,loss of S-Glutathione
+C10H7NO,C-10H-7N-1O-1,12,(-C10H7NO),-157.052764,loss of indole acetyl
+C12H20O10,C-12H-20O-10,22,(-C12H20O10),   -324.105650,loss of di-hexose
+C16H30O,C-16H-30O-1,17,(-C16H30O),   -238.229665,loss of Palmitic acid
+C18H30O15,C-18H-30O-15,33,(-C18H30O15),   -486.158475,loss of tri-hexose
+C2H2O,C-2H-2O-1,3,(-C2H2O),   -42.010565,Deacetylation
+C2H3NO,C-2H-3N-1O-1,4,(-C2H3NO),   -57.021464,loss of glycine
+C2H4,C-2H-4,2,(-C2H4),   -28.031300,loss of C2H4
+C2H5NO2S,C-2H-5N-1O-2S-1,6,(-C2H5NO2S),   -107.004101,loss of taurine
+C3H2O3,C-3H-2O-3,6,(-C3H2O3),-86.000394,loss of malonyl
+C3H4O,C-3H-4O-1,4,(-C3H4O),-56.026215,loss of propionyl
+C3H5NO2S,C-3H-5N-1O-2S-1,7,(-C3H5NO2S),   -119.004101,loss of S-cysteine
+C3H5NOS,C-3H-5N-1O-1S-1,6,(-C3H5NOS),   -103.009186,loss of cysteine
+C4H2N2O,C-4H-2N-2O-1,7,(-C4H2N2O),   -94.016713,loss of Uracil
+C4H3N3,C-4H-3N-3,7,(-C4H3N3),   -93.032697,loss of Cytosine
+C4H4O,C-4H-4O-1,5,(-C4H4O),-68.026215,loss of crotonyl
+C4H4O3,C-4H-4O-3,7,(-C4H4O3),-100.016044,loss of succinyl
+C4H6O,C-4H-6O-1,5,(-C4H6O),-70.041865,loss of butyryl
+C5H3N5,C-5H-3N-5,10,(-C5H3N5),   -133.038845,loss of Guanine
+C5H4N2O,C-5H-4N-2O-1,8,(-C5H4N2O),   -108.032363,loss of Thymine
+C5H6O3,C-5H-6O-3,8,(-C5H6O3),-114.031694,loss of glutaryl
+C5H7NO3S,C-5H-7N-1O-3S-1,10,(-C5H7NO3S),   -161.014666,loss of N-acetyl-S-cysteine
+C5H8O4,C-5H-8O-4,9,(-C5H8O4),   -132.042260,loss of D-ribose
+C6H10O5,C-6H-10O-5,11,(-C6H10O5),   -162.052825,loss of Hexose
+C6H11O8P,C-6H-11O-8P-1,15,(-C6H11O8P),   -242.019158,loss of Glucose-6-phosphate
+C6H8O6,C-6H-8O-6,12,(-C6H8O6),   -176.032090,loss of glucuronic acid
+C7H13NO2,C-7H-13N-1O-2,10,(-C7H13NO2),   -143.094629,loss of Carnitine
+C9H10N2O5,C-9H-10N-2O-5,16,(-C9H10N2O5),   -226.058973,loss of Uridine
+C9H11N3O4,C-9H-11N-3O-4,16,(-C9H11N3O4),   -225.074957,loss of Cytidine
+CH2,C-1H-2,1,(-CH2),   -14.015650,demethylation
+CO,C-1O-1,2,(-CO),   -27.994915,loss of CO
+CO2,C-1O-2,3,(-CO2),   -43.989830,loss of CO2
+H2,H-2,0,(-H2),   -2.015650,dehydrogenation
+H2O,H-2O-1,1,(-H2O),   -18.010565,loss of water
+HO3P,H-1O-3P-1,4,(-HPO3),   -79.966333,loss of Phosphate
+HN,H-1N-1,1,(-NH),   -15.010899,loss of NH
+H3N,H-3N-1,1,(-NH3),   -17.026549,loss of ammonia
+O,O-1,1,(-O),   -15.994915,loss of oxygen
+O3S,O-3S-1,4,(-SO3),   -79.956817,loss of sulfate
+HO3S,O-3,4,(SO3H -> SH),   -47.984745,Sulfonic acid to Thiol
+H2P2O6,H-2P-2O-6,8,(-H2P2O6),-159.932661,loss of di-phosphate
+H3P3O9,H-3P-3O-9,12,(-H3P3O9),-239.898992,loss of tri-phosphate
+F,HF-1,1,(-F+H),-17.990578,defluorination
+Cl,HCl-1,1,(-Cl+H),-33.961028,dechlorination
+Br,HBr-1,1,(-Br+H),-77.910512,debromination
+I,HI-1,1,(-I+H),-125.896648,deiodination
+NO2,H2O-2,3,(NO2 -> NH2),-29.974179,denitrification
+CF3,C-1F-3H,4,(-CF3+H),-67.987385,loss of trifluoromethyl
+C5NOH13,C-5N-1H-11,6,(-C5NH11),-85.089149,loss of choline
+C5H7O,C-5H-6O-1,6,(-C5H6O),-82.041865,loss of tiglyl
+NO2,N-1O-2H1,3,(-NO2+H),-44.985078,loss of nitro
+C7H7,C-7H-6,7,(-C7H7+H),-91.054775,loss of benzyl
+C6H5,C-6H-4,6,(-C6H5+H),-76.0313,loss of phenyl
+C2H3O2,C-2H-2O-2,4,(-C2H2O2),-58.005479,loss of acetic acid

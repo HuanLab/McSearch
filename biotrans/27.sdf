@@ -1,0 +1,145 @@
+27.sdf
+  ChemDraw09111910492D
+
+ 18 17  0  0  1  0  0  0  0  0999 V2000
+    1.7284   -1.9408    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0
+    2.8806    0.0550    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    1.7284    2.0507    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.7285   -1.2756    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.5763    0.7202    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5761    0.0550    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5761   -1.2756    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.7284    0.7202    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.7285    0.0550    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.8807    0.7202    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5761    0.8799    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.2363   -1.1323    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.2939   -2.0507    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.5763    1.5451    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.4683    1.4346    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.5951    1.1327    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.2932    0.0059    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    3.5951    0.4674    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  7  1  0      
+  2  8  1  0      
+  2 18  1  0      
+  3  8  2  0      
+  4  9  2  0      
+  6  5  1  6      
+  5  9  1  0      
+  5 14  1  0      
+  6  7  1  0      
+  6  8  1  0      
+  6 11  1  0      
+  7 12  1  0      
+  7 13  1  0      
+  9 10  1  0      
+ 10 15  1  0      
+ 10 16  1  0      
+ 10 17  1  0      
+M  END
+>  <PUBCHEM_ATOM_DEF_STEREO_COUNT>
+1
+
+>  <PUBCHEM_ATOM_UDEF_STEREO_COUNT>
+0
+
+>  <PUBCHEM_BONDANNOTATIONS>
+6  5  6
+
+>  <PUBCHEM_BOND_DEF_STEREO_COUNT>
+0
+
+>  <PUBCHEM_BOND_UDEF_STEREO_COUNT>
+0
+
+>  <PUBCHEM_CACTVS_COMPLEXITY>
+160
+
+>  <PUBCHEM_CACTVS_HBOND_ACCEPTOR>
+4
+
+>  <PUBCHEM_CACTVS_HBOND_DONOR>
+2
+
+>  <PUBCHEM_CACTVS_ROTATABLE_BOND>
+4
+
+>  <PUBCHEM_CACTVS_SUBSKEYS>
+AAADccBiMABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgQQCAAACCjFwASCCALAAggIAAGQGAAAAAAAABAAAIGIAAACAAAgACAAQAAAFgCQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+
+>  <PUBCHEM_CACTVS_TAUTO_COUNT>
+-1
+
+>  <PUBCHEM_CACTVS_TPSA>
+91.7
+
+>  <PUBCHEM_COMPONENT_COUNT>
+1
+
+>  <PUBCHEM_COMPOUND_CANONICALIZED>
+1
+
+>  <PUBCHEM_COMPOUND_CID>
+13893975
+
+>  <PUBCHEM_COORDINATE_TYPE>
+1
+5
+255
+
+>  <PUBCHEM_EXACT_MASS>
+177.045964
+
+>  <PUBCHEM_HEAVY_ATOM_COUNT>
+11
+
+>  <PUBCHEM_ISOTOPIC_ATOM_COUNT>
+0
+
+>  <PUBCHEM_IUPAC_CAS_NAME>
+(2R)-2-acetamido-3-(methylthio)propanoic acid
+
+>  <PUBCHEM_IUPAC_INCHI>
+InChI=1S/C6H11NO3S/c1-4(8)7-5(3-11-2)6(9)10/h5H,3H2,1-2H3,(H,7,8)(H,9,10)/t5-/m0/s1
+
+>  <PUBCHEM_IUPAC_INCHIKEY>
+RYGLCORNOFFGTB-YFKPBYRVSA-N
+
+>  <PUBCHEM_IUPAC_NAME>
+(2R)-2-acetamido-3-methylsulfanylpropanoic acid
+
+>  <PUBCHEM_IUPAC_NAME_MARKUP>
+(2<I>R</I>)-2-acetamido-3-methylsulfanylpropanoic acid
+
+>  <PUBCHEM_IUPAC_OPENEYE_NAME>
+(2R)-2-acetamido-3-methylsulfanyl-propanoic acid
+
+>  <PUBCHEM_IUPAC_SYSTEMATIC_NAME>
+(2R)-2-acetamido-3-methylsulfanyl-propanoic acid
+
+>  <PUBCHEM_IUPAC_TRADITIONAL_NAME>
+(2R)-2-acetamido-3-(methylthio)propionic acid
+
+>  <PUBCHEM_MOLECULAR_FORMULA>
+C6H11NO3S
+
+>  <PUBCHEM_MOLECULAR_WEIGHT>
+177.22
+
+>  <PUBCHEM_MONOISOTOPIC_WEIGHT>
+177.045964
+
+>  <PUBCHEM_OPENEYE_CAN_SMILES>
+CC(=O)NC(CSC)C(=O)O
+
+>  <PUBCHEM_OPENEYE_ISO_SMILES>
+CC(=O)N[C@@H](CSC)C(=O)O
+
+>  <PUBCHEM_TOTAL_CHARGE>
+0
+
+>  <PUBCHEM_XLOGP3_AA>
+-0.2
+
+$$$$

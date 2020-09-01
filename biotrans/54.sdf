@@ -1,0 +1,133 @@
+Untitled Document-3
+  ChemDraw09161917592D
+
+  7  6  0  0  0  0  0  0  0  0999 V2000
+   -1.2290    0.9581    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5614   -0.2906    0.0000 N   0  3  0  0  0  0  0  0  0  0  0  0
+    0.0766    0.3768    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.0464   -0.9581    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.2290    0.1943    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1060   -0.7756    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.7440    0.2906    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  7  1  0      
+  2  3  1  0      
+  2  4  1  0      
+  2  5  1  0      
+  2  6  1  0      
+  3  7  1  0      
+M  CHG  1   2   1
+M  END
+>  <PUBCHEM_ATOM_DEF_STEREO_COUNT>
+4
+
+>  <PUBCHEM_ATOM_UDEF_STEREO_COUNT>
+0
+
+>  <PUBCHEM_BONDANNOTATIONS>
+21  14  6
+14  24  8
+14  25  8
+16  25  8
+16  31  8
+20  22  6
+24  30  8
+30  31  8
+18  4  5
+19  5  5
+
+>  <PUBCHEM_BOND_DEF_STEREO_COUNT>
+0
+
+>  <PUBCHEM_BOND_UDEF_STEREO_COUNT>
+0
+
+>  <PUBCHEM_CACTVS_COMPLEXITY>
+813
+
+>  <PUBCHEM_CACTVS_HBOND_ACCEPTOR>
+11
+
+>  <PUBCHEM_CACTVS_HBOND_DONOR>
+3
+
+>  <PUBCHEM_CACTVS_ROTATABLE_BOND>
+10
+
+>  <PUBCHEM_CACTVS_SUBSKEYS>
+AAADceBzvAMAAAAAAAAAAAAAAAAAASAAAAAgAAAAAAAAAAAAAAAAHgAQCCAACBThgAYDAANABxCoQCJmdICAAAEAAgAIAAAYABCDEAIAgAAOQAAHFgITAADwMAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+
+>  <PUBCHEM_CACTVS_TAUTO_COUNT>
+-1
+
+>  <PUBCHEM_CACTVS_TPSA>
+216
+
+>  <PUBCHEM_COMPONENT_COUNT>
+1
+
+>  <PUBCHEM_COMPOUND_CANONICALIZED>
+1
+
+>  <PUBCHEM_COMPOUND_CID>
+25202509
+
+>  <PUBCHEM_COORDINATE_TYPE>
+1
+5
+255
+
+>  <PUBCHEM_EXACT_MASS>
+487.099507
+
+>  <PUBCHEM_HEAVY_ATOM_COUNT>
+31
+
+>  <PUBCHEM_ISOTOPIC_ATOM_COUNT>
+0
+
+>  <PUBCHEM_IUPAC_CAS_NAME>
+[[(2R,3S,4R,5R)-5-(4-amino-2-oxo-1-pyrimidinyl)-3,4-dihydroxy-2-oxolanyl]methoxy-oxidophosphoryl] 2-(trimethylammonio)ethyl phosphate
+
+>  <PUBCHEM_IUPAC_INCHI>
+InChI=1S/C14H26N4O11P2/c1-18(2,3)6-7-26-30(22,23)29-31(24,25)27-8-9-11(19)12(20)13(28-9)17-5-4-10(15)16-14(17)21/h4-5,9,11-13,19-20H,6-8H2,1-3H3,(H3-,15,16,21,22,23,24,25)/p-1/t9-,11-,12-,13-/m1/s1
+
+>  <PUBCHEM_IUPAC_INCHIKEY>
+RZZPDXZPRHQOCG-OJAKKHQRSA-M
+
+>  <PUBCHEM_IUPAC_NAME>
+[[(2R,3S,4R,5R)-5-(4-amino-2-oxopyrimidin-1-yl)-3,4-dihydroxyoxolan-2-yl]methoxy-oxidophosphoryl] 2-(trimethylazaniumyl)ethyl phosphate
+
+>  <PUBCHEM_IUPAC_NAME_MARKUP>
+[[(2<I>R</I>,3<I>S</I>,4<I>R</I>,5<I>R</I>)-5-(4-amino-2-oxopyrimidin-1-yl)-3,4-dihydroxyoxolan-2-yl]methoxy-oxidophosphoryl] 2-(trimethylazaniumyl)ethyl phosphate
+
+>  <PUBCHEM_IUPAC_OPENEYE_NAME>
+[[(2R,3S,4R,5R)-5-(4-amino-2-oxo-pyrimidin-1-yl)-3,4-dihydroxy-tetrahydrofuran-2-yl]methoxy-oxido-phosphoryl] 2-(trimethylammonio)ethyl phosphate
+
+>  <PUBCHEM_IUPAC_SYSTEMATIC_NAME>
+[[(2R,3S,4R,5R)-5-(4-azanyl-2-oxidanylidene-pyrimidin-1-yl)-3,4-bis(oxidanyl)oxolan-2-yl]methoxy-oxidanidyl-phosphoryl] 2-(trimethylazaniumyl)ethyl phosphate
+
+>  <PUBCHEM_IUPAC_TRADITIONAL_NAME>
+[[(2R,3S,4R,5R)-5-(4-amino-2-keto-pyrimidin-1-yl)-3,4-dihydroxy-tetrahydrofuran-2-yl]methoxy-oxido-phosphoryl] 2-(trimethylammonio)ethyl phosphate
+
+>  <PUBCHEM_MOLECULAR_FORMULA>
+C14H25N4O11P2-
+
+>  <PUBCHEM_MOLECULAR_WEIGHT>
+487.32
+
+>  <PUBCHEM_MONOISOTOPIC_WEIGHT>
+487.099507
+
+>  <PUBCHEM_OPENEYE_CAN_SMILES>
+C[N+](C)(C)CCOP(=O)([O-])OP(=O)([O-])OCC1C(C(C(O1)N2C=CC(=NC2=O)N)O)O
+
+>  <PUBCHEM_OPENEYE_ISO_SMILES>
+C[N+](C)(C)CCOP(=O)([O-])OP(=O)([O-])OC[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=CC(=NC2=O)N)O)O
+
+>  <PUBCHEM_TOTAL_CHARGE>
+-1
+
+>  <PUBCHEM_XLOGP3>
+-4.1
+
+$$$$

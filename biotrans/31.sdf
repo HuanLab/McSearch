@@ -1,0 +1,153 @@
+31.sdf
+  ChemDraw09111913252D
+
+ 20 19  0  0  1  0  0  0  0  0999 V2000
+    0.1358    0.8250    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.1358   -1.6500    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.2933   -0.8250    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    1.5647   -0.8250    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.2933    1.6500    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.0077    0.4125    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.1358   -0.8250    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.5788   -0.4125    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.8502   -0.4125    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.5788    0.4125    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.8502    0.4125    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.2933    0.8250    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.3073   -1.0808    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.0217   -0.1568    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.8502   -0.9240    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.5788    0.9240    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5787   -1.9058    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.2933   -1.3365    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0077   -0.5693    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.7362    1.9058    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1 10  1  0      
+  7  2  1  1      
+  2 17  1  0      
+  8  3  1  6      
+  3 18  1  0      
+  9  4  1  6      
+  4 19  1  0      
+  5 12  1  0      
+  5 20  1  0      
+  6 12  2  0      
+  7  8  1  0      
+  7  9  1  0      
+  7 13  1  0      
+  8 10  1  0      
+  8 14  1  0      
+  9 11  1  0      
+  9 15  1  0      
+ 10 12  1  1      
+ 10 16  1  0      
+M  END
+>  <PUBCHEM_ATOM_DEF_STEREO_COUNT>
+4
+
+>  <PUBCHEM_ATOM_UDEF_STEREO_COUNT>
+1
+
+>  <PUBCHEM_BONDANNOTATIONS>
+11  13  5
+8  2  5
+9  3  6
+10  4  6
+12  5  3
+
+>  <PUBCHEM_BOND_DEF_STEREO_COUNT>
+0
+
+>  <PUBCHEM_BOND_UDEF_STEREO_COUNT>
+0
+
+>  <PUBCHEM_CACTVS_COMPLEXITY>
+205
+
+>  <PUBCHEM_CACTVS_HBOND_ACCEPTOR>
+7
+
+>  <PUBCHEM_CACTVS_HBOND_DONOR>
+5
+
+>  <PUBCHEM_CACTVS_ROTATABLE_BOND>
+1
+
+>  <PUBCHEM_CACTVS_SUBSKEYS>
+AAADccBgOAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAAGgAACAAACBSwgAMACAAABgAIAACQCAIAAAAAAAAAAAFAAAAREBYAAAQCQAAFIAAHAAHKbARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+
+>  <PUBCHEM_CACTVS_TAUTO_COUNT>
+-1
+
+>  <PUBCHEM_CACTVS_TPSA>
+127
+
+>  <PUBCHEM_COMPONENT_COUNT>
+1
+
+>  <PUBCHEM_COMPOUND_CANONICALIZED>
+1
+
+>  <PUBCHEM_COMPOUND_CID>
+94715
+
+>  <PUBCHEM_COORDINATE_TYPE>
+1
+5
+255
+
+>  <PUBCHEM_EXACT_MASS>
+194.042653
+
+>  <PUBCHEM_HEAVY_ATOM_COUNT>
+13
+
+>  <PUBCHEM_ISOTOPIC_ATOM_COUNT>
+0
+
+>  <PUBCHEM_IUPAC_CAS_NAME>
+(2S,3S,4S,5R)-3,4,5,6-tetrahydroxy-2-oxanecarboxylic acid
+
+>  <PUBCHEM_IUPAC_INCHI>
+InChI=1S/C6H10O7/c7-1-2(8)4(5(10)11)13-6(12)3(1)9/h1-4,6-9,12H,(H,10,11)/t1-,2-,3+,4-,6?/m0/s1
+
+>  <PUBCHEM_IUPAC_INCHIKEY>
+AEMOLEFTQBMNLQ-AQKNRBDQSA-N
+
+>  <PUBCHEM_IUPAC_NAME>
+(2S,3S,4S,5R)-3,4,5,6-tetrahydroxyoxane-2-carboxylic acid
+
+>  <PUBCHEM_IUPAC_NAME_MARKUP>
+(2<I>S</I>,3<I>S</I>,4<I>S</I>,5<I>R</I>)-3,4,5,6-tetrahydroxyoxane-2-carboxylic acid
+
+>  <PUBCHEM_IUPAC_OPENEYE_NAME>
+(2S,3S,4S,5R)-3,4,5,6-tetrahydroxytetrahydropyran-2-carboxylic acid
+
+>  <PUBCHEM_IUPAC_SYSTEMATIC_NAME>
+(2S,3S,4S,5R)-3,4,5,6-tetrakis(oxidanyl)oxane-2-carboxylic acid
+
+>  <PUBCHEM_IUPAC_TRADITIONAL_NAME>
+(2S,3S,4S,5R)-3,4,5,6-tetrahydroxytetrahydropyran-2-carboxylic acid
+
+>  <PUBCHEM_MOLECULAR_FORMULA>
+C6H10O7
+
+>  <PUBCHEM_MOLECULAR_WEIGHT>
+194.14
+
+>  <PUBCHEM_MONOISOTOPIC_WEIGHT>
+194.042653
+
+>  <PUBCHEM_OPENEYE_CAN_SMILES>
+C1(C(C(OC(C1O)O)C(=O)O)O)O
+
+>  <PUBCHEM_OPENEYE_ISO_SMILES>
+[C@@H]1([C@@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O
+
+>  <PUBCHEM_TOTAL_CHARGE>
+0
+
+>  <PUBCHEM_XLOGP3_AA>
+-2.3
+
+$$$$
