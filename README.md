@@ -10,7 +10,8 @@ Currently, McSearch is accessible either by R or on website. (our website: cloud
 
 For more details, please refer to the McSearch user protocols.
 
-Please cite: xxx
+Please cite: 
+S. Xing, Y. Hu, Z. Ying, M. Liu, M. Fang, T. Huan, ‘Retrieving and Utilizing Hypothetical Neutral Losses from Tandem Mass Spectra for Spectral Similarity Analysis and Unknown Metabolite Annotation’, Analytical Chemistry
 
 August 2020
 HuanLab
