@@ -15,6 +15,6 @@ October 2020
 HuanLab
 
 # Citation
-S. Xing, Y. Hu, Z. Yin, M. Liu, X. Tang, M. Fang, T. Huan, ‘Retrieving and Utilizing Hypothetical Neutral Losses from Tandem Mass Spectra for Spectral Similarity Analysis and Unknown Metabolite Annotation’, Analytical Chemistry 2020, 92, 21, 14476–14483.
+S. Xing, Y. Hu, Z. Yin, M. Liu, X. Tang, M. Fang, T. Huan, ‘Retrieving and Utilizing Hypothetical Neutral Losses from Tandem Mass Spectra for Spectral Similarity Analysis and Unknown Metabolite Annotation’, **Analytical Chemistry** 2020, 92, 21, 14476–14483.
 
 
