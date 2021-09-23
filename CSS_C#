@@ -1,0 +1,445 @@
+using FileHelpers;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Diagnostics;
+using System.Threading.Tasks;
+
+namespace CSS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string ionMode = "P";
+            double Ms2MzTol = 0.01;
+
+            // read in spectral DB & df
+            List<MS2DB> MS2db = MS2DBManager.ReadMS2DB(@"X:\Users\Shipei_Xing\others\SIMILE_2021-05\pos.csv");
+            List<DF> df = DFManager.ReadDF(@"X:\Users\Shipei_Xing\others\SIMILE_2021-05\final\positive-mode-for-CSS.csv");
+
+            Console.WriteLine("csv loaded");
+
+            Console.WriteLine(df.Count);
+
+            MS2db.OrderBy(o => o.ID);
+            List<MS2db> DB = new List<MS2db>();
+            for (int i = 0; i < MS2db.Count; i++)
+            {
+                List<Tuple<double, double>> ms2 = new List<Tuple<double, double>>();
+
+                string[] mzstr = MS2db[i].MS2Mz.Replace("\"", "").Split(";");
+                string[] intstr = MS2db[i].MS2Int.Replace("\"","").Split(";");
+
+                for (int j = 0; j < mzstr.Length; j++)
+                {
+                    ms2.Add(new Tuple<double, double>(double.Parse(mzstr[j]), double.Parse(intstr[j])));
+                }
+
+                DB.Add(new MS2db { ID = Int32.Parse(MS2db[i].ID), PreMz = double.Parse(MS2db[i].PreMz), MS2 = ms2 });
+
+            }
+            Console.WriteLine("DB loaded");
+
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+
+            List<ResultDF> result = new List<ResultDF>();
+
+            Parallel.For(0, df.Count, i =>
+            //for (int i = 0; i < 10000; i++) // df.Count
+            {
+                Console.WriteLine("///////" + i.ToString());
+                MS2db DB_a = DB.Where(o => o.ID.ToString() == df[i].ID_1).ToList()[0];
+                MS2db DB_b = DB.Where(o => o.ID.ToString() == df[i].ID_2).ToList()[0];
+                double[] indiResult = CSS(DB_a.MS2, DB_a.PreMz, DB_b.MS2, DB_b.PreMz, ionMode, Ms2MzTol, 100, 36);
+                result.Add(new ResultDF
+                {
+                    ID_1 = Int32.Parse(df[i].ID_1),
+                    ID_2 = Int32.Parse(df[i].ID_2),
+                    CSS_max = indiResult[0],
+                    //CSS_mmr = indiResult[1],
+                    CSS_matchNo = indiResult[1]
+                });
+
+            }
+            );
+            Console.WriteLine("computation completed");
+
+            sw.Stop();
+            Console.WriteLine("Elapsed={0}", sw.Elapsed);
+
+
+            //serialize, save the csv file
+            using (Stream stream = File.Open(@"X:\Users\Shipei_Xing\others\SIMILE_2021-05\final\pos_result_for_CSS.bin", FileMode.Create))
+            {
+                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                bformatter.Serialize(stream, result);
+            }
+            Console.WriteLine("bin file saved");
+
+
+            var Fengine = new FileHelperEngine<ResultDF>();
+            string filename = @"X:\Users\Shipei_Xing\others\SIMILE_2021-05\final\pos_result_for_CSS.csv";
+            Fengine.WriteFile(filename, result);
+
+
+        }
+        public static double[] CSS (List<Tuple<double, double>> MS2x, double MS2xPremz,List<Tuple<double, double>> MS2y,double MS2yPremz, string ionMode,
+            double MS2mztol, int topNo, int HNLthreshold)
+        {
+            double MS2xmaxInt = 0;
+            for (int i = 0; i < MS2x.Count; i++)
+            {
+                if(MS2x[i].Item2 > MS2xmaxInt)
+                {
+                    MS2xmaxInt = MS2x[i].Item2;
+                }
+            }
+
+            for (int i = 0; i < MS2x.Count; i++)
+            {
+                MS2x[i] =  new Tuple<double, double> ( MS2x[i].Item1, 100.0 * MS2x[i].Item2 / MS2xmaxInt );
+            }
+            MS2x = (List<Tuple<double, double>>) MS2x.Where(o => o.Item2 >= 1 && o.Item1 <= (MS2xPremz + MS2mztol)).ToList();
+
+            if(MS2x.Count > 30)
+            {
+                MS2x = MS2x.OrderByDescending(o => o.Item2).ToList();
+                MS2x.RemoveRange(30, MS2x.Count-30);
+            }
+
+            for (int i = 0; i < MS2x.Count; i++)
+            {
+                MS2x[i] = new Tuple<double, double>(MS2x[i].Item1, Math.Sqrt(MS2x[i].Item2));
+            }
+            ////////
+            double MS2ymaxInt = 0;
+            for (int i = 0; i < MS2y.Count; i++)
+            {
+                if (MS2y[i].Item2 > MS2ymaxInt)
+                {
+                    MS2ymaxInt = MS2y[i].Item2;
+                }
+            }
+
+            for (int i = 0; i < MS2y.Count; i++)
+            {
+                MS2y[i] = new Tuple<double, double>(MS2y[i].Item1, 100.0 * MS2y[i].Item2 / MS2ymaxInt);
+            }
+            MS2y = (List<Tuple<double, double>>)MS2y.Where(o => o.Item2 >= 1 && o.Item1 <= (MS2yPremz + MS2mztol)).ToList();
+
+            if (MS2y.Count > 30)
+            {
+                MS2y = MS2y.OrderByDescending(o => o.Item2).ToList();
+                MS2y.RemoveRange(30, MS2y.Count - 30);
+            }
+
+            for (int i = 0; i < MS2y.Count; i++)
+            {
+                MS2y[i] = new Tuple<double, double>(MS2y[i].Item1, Math.Sqrt(MS2y[i].Item2));
+            }
+            ////////
+            if(ionMode == "P")
+            {
+                MS2x.Add(new Tuple<double, double>(1.007276, 0.0));
+                MS2y.Add(new Tuple<double, double>(1.007276, 0.0));
+            }
+            if (ionMode == "N")
+            {
+                MS2x.Add(new Tuple<double, double>(-1.007276, 0.0));
+                MS2y.Add(new Tuple<double, double>(-1.007276, 0.0));
+            }
+            ////////
+            List<Tuple<double, double>>  MS2x_pre =  new List<Tuple<double, double>> (MS2x.Where(o => Math.Abs(o.Item1 - MS2xPremz) <= MS2mztol)); 
+            if(MS2x_pre.Count == 0)
+            {
+                MS2x.Add(new Tuple<double, double>(MS2xPremz, 0.0));
+            }
+
+            List<Tuple<double, double>> MS2y_pre = new List<Tuple<double, double>>(MS2y.Where(o => Math.Abs(o.Item1 - MS2yPremz) <= MS2mztol));
+            if (MS2y_pre.Count == 0)
+            {
+                MS2y.Add(new Tuple<double, double>(MS2yPremz, 0.0));
+            }
+
+            MS2x = MS2x.OrderBy(o => o.Item1).ToList();
+            MS2y = MS2y.OrderBy(o => o.Item1).ToList();
+            ////////
+            List<HNL> HNL_X_1 = new List<HNL>();
+            List<HNL> HNL_X_2 = new List<HNL>();
+            for (int m = 0; m < (MS2x.Count-1); m++)
+            {
+                for (int n = (m+1); n < MS2x.Count; n++)
+                {
+                    if((MS2x[n].Item1 - MS2x[m].Item1) < HNLthreshold)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if( m == 0)
+                        {
+                            HNL_X_1.Add(new HNL
+                            {
+                                HNLvalue = (MS2x[n].Item1 - MS2x[m].Item1),
+                                HNLint = MS2x[n].Item2
+                            });
+                        }
+                        else
+                        {
+
+                            HNL_X_2.Add(new HNL
+                            {
+                                HNLvalue = (MS2x[n].Item1 - MS2x[m].Item1),
+                                HNLint = 0.5 * (MS2x[m].Item2 + MS2x[n].Item2)
+                            });
+                        }
+
+                    }
+                }
+            }
+
+            List<HNL> HNL_X = new List<HNL>(HNL_X_1);
+            if ((HNL_X_1.Count + HNL_X_2.Count) > topNo)
+            {
+                HNL_X_2 = HNL_X_2.OrderByDescending(o => o.HNLint).ToList();
+                HNL_X.AddRange(HNL_X_2.GetRange(0, (topNo - HNL_X_1.Count)));
+            }
+            else
+            {
+                HNL_X.AddRange(HNL_X_2);
+            }
+            ////////
+            List<HNL> HNL_Y_1 = new List<HNL>();
+            List<HNL> HNL_Y_2 = new List<HNL>();
+            for (int m = 0; m < (MS2y.Count - 1); m++)
+            {
+                for (int n = (m + 1); n < MS2y.Count; n++)
+                {
+                    if ((MS2y[n].Item1 - MS2y[m].Item1) < HNLthreshold)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (m == 0)
+                        {
+                            HNL_Y_1.Add(new HNL
+                            {
+                                HNLvalue = (MS2y[n].Item1 - MS2y[m].Item1),
+                                HNLint = MS2y[n].Item2
+                            });
+                        }
+                        else
+                        {
+
+                            HNL_Y_2.Add(new HNL
+                            {
+                                HNLvalue = (MS2y[n].Item1 - MS2y[m].Item1),
+                                HNLint = 0.5 * (MS2y[m].Item2 + MS2y[n].Item2)
+                            });
+                        }
+
+                    }
+                }
+            }
+
+            List<HNL> HNL_Y = new List<HNL>(HNL_Y_1);
+            if ((HNL_Y_1.Count + HNL_Y_2.Count) > topNo)
+            {
+                HNL_Y_2 = HNL_Y_2.OrderByDescending(o => o.HNLint).ToList();
+                HNL_Y.AddRange(HNL_Y_2.GetRange(0, (topNo - HNL_Y_1.Count)));
+            }
+            else
+            {
+                HNL_Y.AddRange(HNL_Y_2);
+            }
+            ///////
+            // CSS score
+
+            double x_SumIntSquare = 0;
+            double y_SumIntSquare = 0;
+
+            for (int i = 0; i < HNL_X.Count; i++)
+            {
+                x_SumIntSquare += Math.Pow(HNL_X[i].HNLint, 2);
+            }
+            for (int i = 0; i < HNL_Y.Count; i++)
+            {
+                y_SumIntSquare += Math.Pow(HNL_Y[i].HNLint, 2);
+            }
+
+
+            List<double> x_alignedInt = new List<double>();
+            List<double> y_alignedInt = new List<double>();
+
+
+            for (int i = 0; i < HNL_X.Count; i++)
+            {
+                double ytmpInt = 0;
+                bool match_i = false;
+                List<int> indices = new List<int>();
+
+                for (int j = 0; j < HNL_Y.Count; j++)
+                {
+                    if (indices.Contains(j))
+                    { // if one fragment in Y has been matched to one in X, avoid repetitive matches
+                        continue;
+                    }
+                    double MzDiff_j = Math.Abs(HNL_Y[j].HNLvalue - HNL_X[i].HNLvalue);
+                    if (HNL_Y[j].HNLint > ytmpInt && MzDiff_j <= MS2mztol)
+                    {
+
+                        ytmpInt = HNL_Y[j].HNLint;
+                        match_i = true;
+                        indices.Add(j);
+                    }
+                }
+                if (match_i == true)
+                {
+                    x_alignedInt.Add(HNL_X[i].HNLint);
+                    y_alignedInt.Add(ytmpInt);
+                }
+            }
+
+            double CSS_max = 0;
+            //double CSS_mmr = 0;
+
+            if (x_alignedInt.Count > 0)
+            {
+                double ScoreTop = 0;
+                for (int i = 0; i < x_alignedInt.Count; i++)
+                {
+                    ScoreTop += x_alignedInt[i] * y_alignedInt[i];
+                }
+
+                double x_alignedIntsumsquare = 0;
+                for (int i = 0; i < x_alignedInt.Count; i++)
+                {
+                    x_alignedIntsumsquare += Math.Pow(x_alignedInt[i], 2);
+                }
+                double y_alignedIntsumsquare = 0;
+                for (int i = 0; i < y_alignedInt.Count; i++)
+                {
+                    y_alignedIntsumsquare += Math.Pow(y_alignedInt[i], 2);
+                }
+
+                double CSS_1 = ScoreTop / Math.Sqrt(x_SumIntSquare * y_alignedIntsumsquare);
+                double CSS_2 = ScoreTop / Math.Sqrt(x_alignedIntsumsquare * y_SumIntSquare);
+                CSS_max = Math.Max(CSS_1, CSS_2);
+
+                //CSS_mmr = 2.0 * x_alignedInt.Count / (topNo*(2 + Math.Log10(Math.Min(
+                //    HNL_X.Count, HNL_Y.Count) / topNo)));
+            }
+
+            // CSS max score, CSS matched ratio, match number
+            //double[] output = new double[3] {CSS_max, CSS_mmr, x_alignedInt.Count }; 
+            double[] output = new double[2] {CSS_max, x_alignedInt.Count }; 
+
+            return output;
+        }
+    }
+    public class HNL
+    {
+        public double HNLvalue { get; set; }
+
+        public double HNLint { get; set; }
+
+    }
+
+    public class MS2db
+    {
+        public int ID { get; set; }
+        public double PreMz { get; set; }
+        public List<Tuple<double, double>> MS2 { get; set; }
+
+
+    }
+
+    [Serializable]
+    [DelimitedRecord(",")]
+    public class MS2DB
+    {
+        public string ID { get; set; }
+        public string PreMz { get; set; }
+        public string MS2Mz { get; set; }
+        public string MS2Int { get; set; }
+
+    }
+
+    public class MS2DBManager
+    {
+        public static List<MS2DB> ReadMS2DB(string path)
+        {
+            var engine = new FileHelperEngine<MS2DB>();
+            var records = engine.ReadFile(path);
+            var MS2DB_list = new List<MS2DB>();
+
+            foreach (var record in records)
+            {
+                MS2DB_list.Add(new MS2DB
+                {
+                    ID = record.ID,
+                    PreMz = record.PreMz,
+                    MS2Mz = record.MS2Mz,
+                    MS2Int = record.MS2Int,
+                });
+            }
+            MS2DB_list.RemoveAt(0); // remove the header row
+
+            return MS2DB_list;
+        }
+
+    }
+
+    [Serializable]
+    [DelimitedRecord(",")]
+    public class DF
+    {
+        public string ID_1 { get; set; }
+        public string ID_2 { get; set; }
+
+    }
+
+    public class DFManager
+    {
+        public static List<DF> ReadDF(string path)
+        {
+            var engine = new FileHelperEngine<DF>();
+            var records = engine.ReadFile(path);
+            var DF_list = new List<DF>();
+
+            foreach (var record in records)
+            {
+                DF_list.Add(new DF
+                {
+                    ID_1 = record.ID_1,
+                    ID_2 = record.ID_2,
+                });
+            }
+            DF_list.RemoveAt(0); // remove the header row
+
+            return DF_list;
+        }
+
+    }
+
+
+    [Serializable]
+    [DelimitedRecord(",")]
+    public class ResultDF
+    {
+        public int ID_1 { get; set; }
+        public int ID_2 { get; set; }
+        public double CSS_max { get; set; }
+        // public double CSS_mmr { get; set; }
+        public double CSS_matchNo { get; set; }
+
+    }
+
+}
